@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungHearts &#x2022 About Us</title>
+    <link rel="shortcut icon" href="images/logo_img.png">
+    <!-- <link rel="stylesheet" href="aboutStyle.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+NZ:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            height: 100vh;
+            text-align: center;
+            padding: 0.1rem;
+            font-family: 'Arial', sans-serif;
+            /* Set a default font for better readability */
+        }
+
+        /* Header Section Starts Here */
+        .about {
+            text-decoration: underline;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width:1130px) {
+            .header-content {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                align-self: center;
+            }
+
+            #question-mark {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .donate-button {
+                padding: 0.8rem 2rem;
+                /* Reduced padding */
+                font-size: 1.2rem;
+                /* Reduced font size */
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .logo-text {
+                font-size: 1.5rem;
+                /* Further reduced font size */
+            }
+
+            .nav {
+                flex-direction: column;
+                /* Stack navigation links vertically */
+            }
+        }
+
+        .header {
+            width: 100%;
+            border-bottom: 2px solid black;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.625rem;
+        }
+
+        .logo-icon {
+            height: 5.875rem;
+            width: 5.875rem;
+            border: 3px solid black;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            /* Reduced font size for smaller screens */
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            /* Reduced font size for smaller screens */
+            font-weight: 600;
+            transform: all 0.1s;
+            color: rgb(17, 17, 17);
+        }
+
+        .nav-link:hover,
+        .nav-link:active {
+            color: rgb(15, 15, 15);
+            text-shadow: 2px 2px 8px rgb(245, 105, 105);
+        }
+
+
+        .social-handle {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.5rem;
+            transform: all 0.1s;
+        }
+
+        #instagram-icon,
+        #linkedin-icon,
+        #twitter-icon {
+            height: 1.5rem;
+            transform: all 0.1s;
+        }
+
+        #instagram-icon:hover,
+        #linkedin-icon:hover,
+        #twitter-icon:hover {
+            transform: scale(2);
+        }
+
+        .donate-button {
+            background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+            display: block;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 1rem 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            background-size: 200% auto;
+            box-shadow: 0 0 20px #eee;
+            font-weight: bold;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .donate-button:hover {
+            background-position: right center;
+            color: #5505bd;
+            text-decoration: none;
+        }
+
+        /* Header Section Ends here */
+
+
+        /* Our team section */
+
+        .team-title-container {
+            padding: 2.5rem;
+            display: flex;
+            background-color: lightgrey;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 10rem;
+        }
+
+        .our-team {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            /* height: 100%; */
+        }
+
+        .our-team h1 {
+            font-size: 3.5rem;
+            font-family: "Kanit", sans-serif;
+            font-weight: 600;
+        }
+
+        .our-team p {
+            font-family: "Playwrite NZ", cursive;
+        }
+
+        /* Members Card Section */
+
+        .container {
+            background-color: white;
+            padding: 2.5rem 9;
+            text-align: center;
+            background-image: url(images/ed-4.png);
+            background-repeat: no-repeat;
+            background-size: 100vw;
+        }
+
+        .card-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            display: flex;
+            padding: 3rem;
+            border-radius: 1rem;
+            gap: 1rem;
+        }
+
+        @media screen and (max-width:800px) {
+            .card {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .info-container {
+            max-width: 600px;
+            box-shadow: 5px 5px 5px yellowgreen;
+        }
+
+        .icon-svg {
+            border: none;
+            border-radius: 20px;
+            transform: all 0.1s;
+        }
+
+        .icon-svg:hover {
+            transform: perspective(500px) scaleZ(2) rotateY(7deg);
+            box-shadow: 0px 0px 15px palevioletred;
+        }
+
+        .card-title {
+            color: blueviolet;
+            font-weight: bold;
+            font-size: 2.4rem;
+            text-decoration: underline;
+            text-decoration-color: black;
+        }
+
+        .member-position {
+            margin: 0.5rem;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .card-desc {
+            margin: 1rem;
+            font-size: 1.1rem;
+            overflow-y: auto;
+            font-weight: bold;
+        }
+
+        /* footer */
+
+        .container-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: lightgray;
+        }
+
+        .container-1 {
+            max-width: 700px;
+            /* background-color: beige; */
+            padding: 1rem;
+        }
+
+        .container-2 {
+            width: 100%;
+            text-align: center;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 1.2rem;
+        }
+
+        .footer-link {
+            font-size: 1.5rem;
+            /* Reduced font size for smaller screens */
+            color: rgb(118, 6, 92);
+            font-family: "Roboto Slab", serif;
+            font-weight: bold;
+        }
+
+        .container-3 {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem;
+            padding: 2rem;
+            gap: 5rem;
+            flex-direction: column;
+            /* Stack elements vertically on smaller screens */
+            align-items: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-socials-text {
+            font-size: 1.5rem;
+            /* Reduced font size for smaller screens */
+            font-weight: 600;
+            color: rgb(244, 92, 173);
+        }
+
+        /* Media Queries for Smaller Screens */
+        @media screen and (max-width: 900px) {
+            .container-3 {
+                flex-direction: column;
+                /* Stack elements vertically */
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav bar -->
+
+    <div class="header">
+
+        <div class="header-content">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link home">Home</a>
+                <a href="about.html" class="nav-link about">About Us</a>
+                <a href="#event" class="nav-link event">Events</a>
+                <a href="contactUs.html " class="nav-link contact">Contact Us</a>
+            </nav>
+
+            <div class="social-handle">
+                <a href="https://www.instagram.com/_younghearts_ngo/" target="_blank" class="social-link">
+                    <img src="images/instagram.svg" alt="Instagram" id="instagram-icon">
+                </a>
+                <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="social-link" target="_blank">
+                    <img src="images/twitter.svg" alt="Twitter" id="twitter-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/younghearts-organisation/" class="social-link"
+                    target="_blank">
+                    <img src="images/linkedin.svg" alt="Linkedin" id="linkedin-icon">
+                </a>
+            </div>
+
+            <a href="images/QR-to-pay.jpeg" class="donate-button" target="_blank" download>
+                Donate
+            </a>
+        </div>
+    </div>
+
+    <!-- Our Team Title -->
+    <div class="team-title-container">
+        <div class="our-team">
+            <h1>
+                Our Team
+            </h1>
+            <p>
+                "Alone we can do so little; together we can do so much"
+            </p>
+        </div>
+    </div>
+
+    <!-- Card of Members -->
+
+    <div class="container">
+        <div class="card-container">
+            <div class="card-grid">
+
+                <!-- Card 1 -->
+                <div class="card founder">
+                    <div class="icon-container">
+                        <img src="images/parisha.PNG" alt="Founder Image" class="icon-svg" loading="lazy">
+                    </div>
+                    <div class="info-container">
+                        <div class="card-title">
+                            Parisha
+                        </div>
+                        <div class="member-position">
+                            (Founder and President)
+                        </div>
+                        <div class="card-desc">
+                            As the founder and president of an impactful NGO, Parisha embodies unwavering determination
+                            and compassion. Her leadership is marked by a practical yet empathetic approach, inspiring
+                            others with her dedication to social justice. Her curly chestnut hair and warm demeanor
+                            reflect years of tireless commitment to making a difference.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card co-founder">
+                    <div class="icon-container">
+                        <img src="images/akshara.PNG" alt="Co-Founder Image" class="icon-svg" loading="lazy">
+                    </div>
+                    <div class="info-container">
+                        <div class="card-title">
+                            Akshara Dagar
+                        </div>
+                        <div class="member-position">
+                            (Co-Founder and Vice-President)
+                        </div>
+                        <div class="card-desc">
+                            Akshara, our visionary founder and president, combines unwavering determination with
+                            compassionate leadership. Her sharp intellect and dedication to social justice drive
+                            impactful initiatives that inspire our team and community. Join us in making a difference
+                            under Sarah's visionary guidance.
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card secretary">
+                    <div class="icon-container">
+                        <img src="images/bhavya.PNG" alt="Secretary Image" class="icon-svg" loading="lazy">
+                    </div>
+                    <div class="info-container">
+                        <div class="card-title">
+                            Bhavya Gupta
+                        </div>
+                        <div class="member-position">
+                            (Secretary)
+                        </div>
+                        <div class="card-desc">
+                            Bhavya, our dedicated secretary, ensures smooth operations with meticulous attention to
+                            detail and a commitment to efficiency. His support is instrumental in our mission to create
+                            meaningful social impact. Join us as we move forward with James's essential contributions.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card social-head">
+                    <div class="icon-container">
+                        <img src="images/aksNayal.PNG" alt="Social Head Image" class="icon-svg" loading="lazy">
+                    </div>
+                    <div class="info-container">
+                        <div class="card-title">
+                            Aks Nayal
+                        </div>
+                        <div class="member-position">
+                            (Social Media Head)
+                        </div>
+                        <div class="card-desc">
+                            Aks leads our social media efforts with creativity and strategic insight. His innovative
+                            approach and deep understanding of digital platforms amplify our message and engage our
+                            community effectively. Join us as Aks spearheads our online presence, driving our mission
+                            forward with impactful storytelling and engagement.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+
+    <div class="container-footer">
+        <div class="container-1">
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+        </div>
+
+        <div class="container-2">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">Team</a>
+            <a href="#events" class="footer-link">Events</a>
+            <a href="#Awards" class="footer-link">Awards</a>
+            <a href="contactUs.html" class="footer-link">Contact Us</a>
+        </div>
+
+        <div class="container-3">
+
+            <a href="https://www.instagram.com/_younghearts_ngo/" class="footer-socials">
+                <img src="images/instagram.svg" alt="" id="instagram-icon">
+                <p class="footer-socials-text">Instagram</p>
+            </a>
+
+            <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="footer-socials">
+                <img src="images/twitter.svg" alt="" id="twitter-icon">
+                <p class="footer-socials-text">Twitter</p>
+            </a>
+
+            <a href="https://www.linkedin.com/company/younghearts-organisation/" class="footer-socials">
+                <img src="images/linkedin.svg" alt="" id="linkedin-icon">
+                <p class="footer-socials-text">LinkedIn</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

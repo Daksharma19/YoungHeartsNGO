@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungHearts &#x2022 Contact Us</title>
+    <link rel="shortcut icon" href="images/logo_img.png">
+    <!-- <link rel="stylesheet" href="contactStyle.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            height: 100vh;
+            text-align: center;
+            padding: 0.1rem;
+            font-family: 'Outfit';
+            background: linear-gradient(#ffdad5, #fff7f9);
+
+        }
+
+        .contact {
+            text-decoration: underline;
+        }
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width:1130px) {
+            .header-content {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                align-self: center;
+            }
+
+            #question-mark {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .donate-button {
+                padding: 0.8rem 2rem;
+                /* Reduced padding */
+                font-size: 1.2rem;
+                /* Reduced font size */
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .logo-text {
+                font-size: 1.5rem;
+                /* Further reduced font size */
+            }
+
+            .nav {
+                flex-direction: column;
+                /* Stack navigation links vertically */
+            }
+        }
+
+        .header {
+            width: 100%;
+            border-bottom: 2px solid black;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.625rem;
+        }
+
+        .logo-icon {
+            height: 5.875rem;
+            width: 5.875rem;
+            border: 3px solid black;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            /* Reduced font size for smaller screens */
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            /* Reduced font size for smaller screens */
+            font-weight: 600;
+            transform: all 0.1s;
+            color: rgb(17, 17, 17);
+        }
+
+        .nav-link:hover,
+        .nav-link:active {
+            color: rgb(15, 15, 15);
+            text-shadow: 2px 2px 8px rgb(245, 105, 105);
+        }
+
+
+        .social-handle {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.5rem;
+            transform: all 0.1s;
+        }
+
+        #instagram-icon,
+        #linkedin-icon,
+        #twitter-icon {
+            height: 1.5rem;
+            transform: all 0.1s;
+        }
+
+        #instagram-icon:hover,
+        #linkedin-icon:hover,
+        #twitter-icon:hover {
+            transform: scale(2);
+        }
+
+        .donate-button {
+            background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+            display: block;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 1rem 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            background-size: 200% auto;
+            box-shadow: 0 0 20px #eee;
+            font-weight: bold;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .donate-button:hover {
+            background-position: right center;
+            color: #5505bd;
+            text-decoration: none;
+        }
+
+        /* Header Section Ends here */
+
+
+        /* Form Section */
+
+        .contact-container {
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .contact-left-title {
+            font-weight: 600;
+            color: #a363aa;
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        .contact-left-title hr {
+            border: none;
+            width: 120px;
+            height: 5px;
+            background-color: #a363aa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contact-input {
+            width: 400px;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            font-weight: 500;
+            color: #666;
+            border-radius: 50px;
+        }
+
+        .contact-left textarea {
+            height: 140px;
+            padding-top: 15px;
+            border-radius: 20px;
+        }
+
+        .contact-input:focus {
+            border: 2px solid #ff994f;
+        }
+
+        .contact-input::placeholder {
+            color: #a9a9a9;
+        }
+
+        .contact-left button {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            gap: 10px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(270deg, #ff995f, #fa6d86);
+            cursor: pointer;
+        }
+
+        .contact-left button img {
+            height: 1rem;
+        }
+
+        .contact-right {
+            width: 500px;
+        }
+
+        @media (max-width:800px) {
+            .contact-input {
+                width: 80vw;
+            }
+
+            .contact-right {
+                display: none;
+            }
+        }
+
+        /* footer */
+
+        .container-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: lightgray;
+        }
+
+        .container-1 {
+            max-width: 700px;
+            /* background-color: beige; */
+            padding: 1rem;
+        }
+
+        .container-2 {
+            width: 100%;
+            text-align: center;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 1.2rem;
+        }
+
+        .footer-link {
+            font-size: 1.5rem;
+            /* Reduced font size for smaller screens */
+            color: rgb(118, 6, 92);
+            font-family: "Roboto Slab", serif;
+            font-weight: bold;
+        }
+
+        .container-3 {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem;
+            padding: 2rem;
+            gap: 5rem;
+            flex-direction: column;
+            /* Stack elements vertically on smaller screens */
+            align-items: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-socials-text {
+            font-size: 1.5rem;
+            /* Reduced font size for smaller screens */
+            font-weight: 600;
+            color: rgb(244, 92, 173);
+        }
+
+        /* Media Queries for Smaller Screens */
+        @media screen and (max-width: 900px) {
+            .container-3 {
+                flex-direction: column;
+                /* Stack elements vertically */
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <div class="header">
+
+        <div class="header-content">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link home">Home</a>
+                <a href="about.html" class="nav-link about">About Us</a>
+                <a href="#event" class="nav-link event">Events</a>
+                <a href="contactUs.html " class="nav-link contact">Contact Us</a>
+            </nav>
+
+            <div class="social-handle">
+                <a href="https://www.instagram.com/_younghearts_ngo/" target="_blank" class="social-link">
+                    <img src="images/instagram.svg" alt="Instagram" id="instagram-icon">
+                </a>
+                <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="social-link" target="_blank">
+                    <img src="images/twitter.svg" alt="Twitter" id="twitter-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/younghearts-organisation/" class="social-link"
+                    target="_blank">
+                    <img src="images/linkedin.svg" alt="Linkedin" id="linkedin-icon">
+                </a>
+            </div>
+
+            <a href="images/QR-to-pay.jpeg" class="donate-button" target="_blank" download>
+                Donate
+            </a>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="contact-container">
+        <form action="" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr />
+            </div>
+            <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+            <input type="email" name="name" placeholder="Your Email" class="contact-input" required>
+            <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+            <button type="submit">Submit <img src="images/arrow_icon.png"></button>
+        </form>
+        <div class="contact-right">
+            <img src="images/right_img.png">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="container-footer">
+        <div class="container-1">
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+        </div>
+
+        <div class="container-2">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">Team</a>
+            <a href="#events" class="footer-link">Events</a>
+            <a href="#Awards" class="footer-link">Awards</a>
+            <a href="contactUs.html" class="footer-link">Contact Us</a>
+        </div>
+
+        <div class="container-3">
+
+            <a href="https://www.instagram.com/_younghearts_ngo/" class="footer-socials">
+                <img src="images/instagram.svg" alt="" id="instagram-icon">
+                <p class="footer-socials-text">Instagram</p>
+            </a>
+
+            <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="footer-socials">
+                <img src="images/twitter.svg" alt="" id="twitter-icon">
+                <p class="footer-socials-text">Twitter</p>
+            </a>
+
+            <a href="https://www.linkedin.com/company/younghearts-organisation/" class="footer-socials">
+                <img src="images/linkedin.svg" alt="" id="linkedin-icon">
+                <p class="footer-socials-text">LinkedIn</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
