@@ -21,10 +21,9 @@
             padding: 0.1rem;
             font-family: 'Outfit';
             background: linear-gradient(#ffdad5, #fff7f9);
-
         }
 
-        .contact {
+        .contact{
             text-decoration: underline;
         }
         .header-content {
@@ -277,7 +276,7 @@
         }
 
         .footer-link {
-            font-size: 1.5rem;
+            font-size: 2rem;
             /* Reduced font size for smaller screens */
             color: rgb(118, 6, 92);
             font-family: "Roboto Slab", serif;
@@ -306,6 +305,14 @@
             font-weight: 600;
             color: rgb(244, 92, 173);
         }
+        .name{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: rgb(63, 62, 62);
+            color: white;
+            width: 100%;
+        }
 
         /* Media Queries for Smaller Screens */
         @media screen and (max-width: 900px) {
@@ -315,6 +322,7 @@
                 gap: 2rem;
             }
         }
+        
     </style>
 </head>
 
@@ -333,7 +341,7 @@
             <nav class="nav">
                 <a href="index.html" class="nav-link home">Home</a>
                 <a href="about.html" class="nav-link about">About Us</a>
-                <a href="#event" class="nav-link event">Events</a>
+                <a href="events.html" class="nav-link event">Events</a>
                 <a href="contactUs.html " class="nav-link contact">Contact Us</a>
             </nav>
 
@@ -386,8 +394,8 @@
         <div class="container-2">
             <a href="index.html" class="footer-link">Home</a>
             <a href="about.html" class="footer-link">Team</a>
-            <a href="#events" class="footer-link">Events</a>
-            <a href="#Awards" class="footer-link">Awards</a>
+            <a href="events.htmls" class="footer-link">Events</a>
+            <!-- <a href="#Awards" class="footer-link">Awards</a> -->
             <a href="contactUs.html" class="footer-link">Contact Us</a>
         </div>
 
@@ -407,6 +415,10 @@
                 <img src="images/linkedin.svg" alt="" id="linkedin-icon">
                 <p class="footer-socials-text">LinkedIn</p>
             </a>
+        </div>
+        <div class="name">
+            <p>&copy; 2024 YoungHearts. All rights reserved.</p>
+            <p>Websited developed by ~ Daksh Sharma</p>
         </div>
     </div>
 
