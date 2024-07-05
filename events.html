@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungHearts &#x2022 Events</title>
+    <link rel="shortcut icon" href="images/logo_img.png">
+    <!-- <link rel="stylesheet" href="styleEvent.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playwrite+IT+Moderna:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            text-align: center;
+            padding: 0.1rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            border-bottom: 2px solid black;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 1130px) {
+            .header-content {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                align-self: center;
+            }
+
+            #question-mark {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .donate-button {
+                padding: 0.8rem 2rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.625rem;
+        }
+
+        .logo-icon {
+            height: 5.875rem;
+            width: 5.875rem;
+            border: 3px solid black;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgb(17, 17, 17);
+            transition: all 0.1s;
+        }
+
+        .nav-link:hover,
+        .nav-link:active {
+            color: rgb(15, 15, 15);
+            text-shadow: 2px 2px 8px rgb(245, 105, 105);
+        }
+
+        .social-handle {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.5rem;
+            transition: all 0.1s;
+        }
+
+        #instagram-icon,
+        #linkedin-icon,
+        #twitter-icon {
+            height: 1.5rem;
+            transition: all 0.1s;
+        }
+
+        #instagram-icon:hover,
+        #linkedin-icon:hover,
+        #twitter-icon:hover {
+            transform: scale(2);
+        }
+
+        .donate-button {
+            background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+            display: block;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 1rem 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            background-size: 200% auto;
+            box-shadow: 0 0 20px #eee;
+            font-weight: bold;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .donate-button:hover {
+            background-position: right center;
+            color: #5505bd;
+            text-decoration: none;
+        }
+
+        .title-bar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: lightgrey;
+            height: 5rem;
+            text-align: center;
+            align-items: center;
+        }
+
+        #title-text {
+            color: rgb(255, 91, 31);
+            font-size: 3rem;
+            text-decoration-color: black;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .card {
+            background-color: #E0C3FC;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid black;
+            padding: 1rem;
+            align-items: center;
+        }
+
+        .right {
+            max-width: 40rem;
+            margin: 1rem;
+            flex: 1;
+        }
+
+        .second {
+            background-color: lightskyblue;
+        }
+
+        .third {
+            background-color: cornsilk;
+        }
+
+        .event-img-first,
+        .event-img-second,
+        .event-img-third {
+            width: 100%;
+            height: 20rem;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px black;
+            transition: all 0.1s;
+        }
+
+        .event-img-first:hover,
+        .event-img-second:hover,
+        .event-img-third:hover {
+            transform: scale(1.1);
+            box-shadow: 3px 3px 10px blueviolet;
+        }
+
+        .left {
+            max-width: 50%;
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card-title {
+            font-family: "Merriweather", serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .card-desc {
+            font-family: "Playwrite IT Moderna", cursive;
+            font-weight: 450;
+            font-size: 0.9rem;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .right,
+            .left {
+                max-width: 100%;
+            }
+
+            .left {
+                padding: 1rem;
+            }
+
+            .event-img-first,
+            .event-img-second,
+            .event-img-third {
+                border-radius: 10px;
+            }
+        }
+
+        .container-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: lightgray;
+        }
+
+        .container-1 {
+            max-width: 700px;
+            padding: 1rem;
+        }
+
+        .container-2 {
+            width: 100%;
+            text-align: center;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 1.2rem;
+        }
+
+        .footer-link {
+            font-size: 2rem;
+            color: rgb(118, 6, 92);
+            font-family: "Roboto Slab", serif;
+            font-weight: bold;
+        }
+
+        .container-3 {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem;
+            padding: 2rem;
+            gap: 5rem;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-socials-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgb(244, 92, 173);
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: rgb(63, 62, 62);
+            color: white;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 900px) {
+            .container-3 {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav bar Section -->
+
+    <div class="header">
+
+        <div class="header-content">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link home">Home</a>
+                <a href="about.html" class="nav-link about">About Us</a>
+                <a href="#event" class="nav-link event">Events</a>
+                <a href="contactUs.html " class="nav-link contact">Contact Us</a>
+            </nav>
+
+            <div class="social-handle">
+                <a href="https://www.instagram.com/_younghearts_ngo/" target="_blank" class="social-link">
+                    <img src="images/instagram.svg" alt="Instagram" id="instagram-icon">
+                </a>
+                <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="social-link" target="_blank">
+                    <img src="images/twitter.svg" alt="Twitter" id="twitter-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/younghearts-organisation/" class="social-link"
+                    target="_blank">
+                    <img src="images/linkedin.svg" alt="Linkedin" id="linkedin-icon">
+                </a>
+            </div>
+
+            <a href="images/QR-to-pay.jpeg" class="donate-button" target="_blank" download>
+                Donate
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+
+    <div class="container">
+        <div class="title-bar">
+            <h2 id="title-text">EVENTS</h2>
+        </div>
+
+        <div class="event-container">
+            <div class="event-grid">
+                <!-- Card 1 -->
+                <div class="card first">
+                    <div class="right">
+                        <img src="images/e-1.jpg" alt="Summer Camp image" class="event-img-first">
+                    </div>
+                    <div class="left">
+                        <h2 class="card-title">Summer Camp: A Summer of Discovery and Joy</h2>
+                        <p class="card-desc">Our annual Summer Camp is a transformative experience where children engage
+                            in a variety of activities designed to foster growth, creativity, and leadership. This year,
+                            we had an incredible time filled with outdoor adventures, creative workshops, and
+                            team-building exercises. Watching the children immerse themselves in learning and fun, while
+                            building lasting friendships and developing new skills, was truly inspiring. We look forward
+                            to welcoming even more young minds next summer for another season of joy and discovery. </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card second">
+                    <div class="right">
+                        <h2 class="card-title">Yoga Day: Embracing Peace and Wellness</h2>
+                        <p class="card-desc">Yoga Day was a delightful and heartwarming experience for all. In the
+                            tranquil surroundings of our community garden, children engaged in playful and calming yoga
+                            sessions. Guided by our caring instructors, the kids discovered the joy of mindfulness and
+                            the art of relaxation. Their laughter and enthusiasm filled the air, creating a harmonious
+                            and peaceful atmosphere. It was a day of serenity and connection, leaving everyone refreshed
+                            and inspired. </p>
+                    </div>
+                    <div class="left">
+                        <img src="images/y-3.webp" alt="Yoga Day image" class="event-img-second">
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card third">
+                    <div class="right">
+                        <img src="images/father-day-1.jpg" alt="Father's Day image" class="event-img-third">
+                    </div>
+                    <div class="left">
+                        <h2 class="card-title">Father's Day: Celebrating Our Everyday Heroes</h2>
+                        <p class="card-desc">Father's Day was a heartfelt celebration of the incredible dads in our
+                            community. We honored their love and dedication with joyous activities and moments of
+                            gratitude. Children created personalized cards for their fathers, expressing their
+                            appreciation in unique and creative ways. Fathers and their children bonded over games,
+                            crafts, and shared stories, creating lasting memories. It was a touching tribute to the
+                            everyday heroes who inspire us with their unwavering support and love.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+
+    <div class="container-footer">
+        <div class="container-1">
+            <a href="index.html" class="logo">
+                <img src="images/logo_img.png" alt="Logo Image" class="logo-icon">
+                <span class="logo-text">YoungHearts</span>
+            </a>
+        </div>
+
+        <div class="container-2">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">Team</a>
+            <a href="events.htmls" class="footer-link">Events</a>
+            <!-- <a href="#Awards" class="footer-link">Awards</a> -->
+            <a href="contactUs.html" class="footer-link">Contact Us</a>
+        </div>
+
+        <div class="container-3">
+
+            <a href="https://www.instagram.com/_younghearts_ngo/" class="footer-socials">
+                <img src="images/instagram.svg" alt="" id="instagram-icon">
+                <p class="footer-socials-text">Instagram</p>
+            </a>
+
+            <a href="https://x.com/younghearts00?t=hQwGFJ3VdEJVrlhuaGrO7A&s=08" class="footer-socials">
+                <img src="images/twitter.svg" alt="" id="twitter-icon">
+                <p class="footer-socials-text">Twitter</p>
+            </a>
+
+            <a href="https://www.linkedin.com/company/younghearts-organisation/" class="footer-socials">
+                <img src="images/linkedin.svg" alt="" id="linkedin-icon">
+                <p class="footer-socials-text">LinkedIn</p>
+            </a>
+        </div>
+
+        <div class="name">
+            <p>&copy; 2024 YoungHearts. All rights reserved.</p>
+            <p>Websited developed by ~ Daksh Sharma</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
